@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+    div#score 0
+
+
+    div#stage
+
+
+    - var scripts = ["Shapes.js","Board.js","Swapper.js","main.js"];
+    for name in scripts
+        script(src='/javascripts/'+name)
+
+

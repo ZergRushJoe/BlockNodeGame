@@ -1,0 +1,50 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #00b7ff;
+  padding: 0px;
+  margin: 0px auto;
+}
+
+a {
+  color: #00B7FF;
+}
+#score
+{
+  float :left;
+  display:inline-block;
+  background: black;
+  color:white;
+  font-size:28px;
+  height:30px;
+  width:100px;
+  text-align: right;
+}
+#stage
+{
+
+  display:inline-block;
+  /*font-size:0 ;*/
+  position: relative;
+}
+.line
+{
+    background: #666;
+}
+.block
+{
+  position: absolute;
+  display: block;
+  background: blue;
+  margin:0;
+  top:0;
+  font-size: 8px;
+  /*border-top: 1px solid rgba(255,255,255,.5);*/
+  /*border-left: 1px solid rgba(255,255,255,.5);*/
+  color:white;
+
+}
+.filled
+{
+  background-image: url("/images/blockCover.png");
+  background-size: cover;
+}
