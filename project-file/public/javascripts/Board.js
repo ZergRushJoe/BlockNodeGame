@@ -175,6 +175,8 @@ function getHeight(index)
 {
 	if(index < Math.floor(ROWS/2)*COLS+COLS)
 		return Math.floor(index/COLS)*HEIGHT;
+	return ROWS*HEIGHT -(Math.floor(index/COLS)-Math.floor(ROWS/2))*HEIGHT;
+}
 function getLength(index)
 {
 	return (index%COLS)*WIDTH ;
