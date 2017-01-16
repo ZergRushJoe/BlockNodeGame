@@ -6,7 +6,7 @@ class Swapper
 {
 
 	//takes a Board , a row with a lower y and a row with a higher y
-	constructor(board,upperRow,lowerRow,timeLenght)
+	constructor(board,upperRow,lowerRow,timeLength)
 	{
 		this.board = board;
 		this.upperRow = upperRow;
@@ -15,7 +15,7 @@ class Swapper
 		this.lowerRowHeight = parseInt(this.board.getNode(upperRow).style.top.replace("px",""));
 		this.swapping = false;
 		//time is in ms
-		this.timerLenght = timeLenght;
+		this.timerLenght = timeLength;
 		this.lastSwap = 0;
 
 		this.offsetSpeed =3;
