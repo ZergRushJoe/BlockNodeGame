@@ -60,28 +60,29 @@ requestAnimationFrame(renderer);
 //event handlers
 
 
-document.addEventListener("keypress",keydown);
+document.addEventListener("keydown",keydown);
 
 function keydown(e)
 {
+    console.log(e);
     if(swappingHap)
     {
         return;
     }
-
-    if(e.key.toLowerCase() == "w")
+    let key = e.key.toLowerCase();
+    if(key == "w" || key == "arrowup")
     {
         gameBoard.activeShape.rotate();
     }
-    if(e.key.toLowerCase() == "a")
+    if(e.key.toLowerCase() == "a"||key == "arrowleft")
     {
         gameBoard.activeShape.moveLeft();
     }
-    if(e.key.toLowerCase() == "d")
+    if(e.key.toLowerCase() == "d"||key == "arrowright")
     {
         gameBoard.activeShape.moveRight();
     }
-    if(e.key.toLowerCase() == "s")
+    if(e.key.toLowerCase() == "s"||key == "arrowdown")
     {
         gameBoard.activeShape.moveDown();
     }
