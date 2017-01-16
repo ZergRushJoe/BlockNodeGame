@@ -29,8 +29,8 @@ class Board
 			temp = this.blocks.item(i);
 			temp.style.width = WIDTH + "px";
 			temp.style.height = HEIGHT + "px";
-			temp.style.top  = (Math.floor(i/COLS) * HEIGHT) + "px";
-			temp.style.left = (i%COLS * WIDTH) + "px";
+			temp.style.top  = getHeight(i) + "px";
+			temp.style.left = getLength(i) + "px";
 		}
 
 	}
@@ -169,6 +169,15 @@ class Board
 
 }
 
+//utilities for game board
 
+function getHeight(index)
+{
+	if(index < Math.floor(ROWS/2)*COLS+COLS)
+		return Math.floor(index/COLS)*HEIGHT;
+function getLength(index)
+{
+	return (index%COLS)*WIDTH ;
+}
 
 
