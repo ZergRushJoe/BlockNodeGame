@@ -26,6 +26,19 @@ a {
   /*font-size:0 ;*/
   position: relative;
 }
+#stage::after
+{
+  display: block;
+  position: relative;
+  top:50%;
+
+  content:'';
+  width:100%;
+
+  height:2px;
+  background: red;
+
+}
 .line
 {
     background: #666;

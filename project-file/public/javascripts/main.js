@@ -64,7 +64,7 @@ document.addEventListener("keydown",keydown);
 
 function keydown(e)
 {
-    console.log(e);
+   
     // if(swappingHap)
     // {
     //     return;

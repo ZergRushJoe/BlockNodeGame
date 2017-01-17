@@ -173,9 +173,9 @@ class Board
 
 function getHeight(index)
 {
-	if(index < Math.floor(ROWS/2)*COLS+COLS)
+	if(index < (Math.floor(ROWS/2))*COLS)
 		return Math.floor(index/COLS)*HEIGHT;
-	return ROWS*HEIGHT -(Math.floor(index/COLS)-Math.floor(ROWS/2))*HEIGHT;
+	return ROWS*HEIGHT -(Math.floor(index/COLS)-(Math.floor(ROWS/2)-1))*HEIGHT;
 }
 function getLength(index)
 {
