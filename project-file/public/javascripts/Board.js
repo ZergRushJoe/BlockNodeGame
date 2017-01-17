@@ -18,7 +18,7 @@ class Board
 		this.activeShape = new Shape(0,this);
 		this.activeShape.pickConfig();
 
-
+		this.stopRow = ROWS*COLS;
 		this.score = 0;
 		this.linePoints = 100;
 		this.linesCleared = 0;
@@ -56,7 +56,7 @@ class Board
 		if(this.updates == this.speed)
 		{
 			this.updates = 0;
-            if(!(this.activeShape.moveDown()))
+            if(!(this.activeShape.moveDown(this.stopRow)))
             {
             	if(this.primed)
 				{
@@ -67,6 +67,7 @@ class Board
 					}
 					this.primed = false;
                     this.clearLine();
+                    this.stopRow = (this.stopRow == ROWS*COLS) ? Math.floor(ROWS*COLS)/2 :ROWS*COLS ;
 					this.activeShape.pickConfig();
 				}else
 				{

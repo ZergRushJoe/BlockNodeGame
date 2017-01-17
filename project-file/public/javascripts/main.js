@@ -64,7 +64,7 @@ document.addEventListener("keydown",keydown);
 
 function keydown(e)
 {
-   
+
     // if(swappingHap)
     // {
     //     return;
@@ -84,6 +84,6 @@ function keydown(e)
     }
     if(e.key.toLowerCase() == "s"||key == "arrowdown")
     {
-        gameBoard.activeShape.moveDown();
+        gameBoard.activeShape.moveDown(gameBoard.stopRow);
     }
 }
