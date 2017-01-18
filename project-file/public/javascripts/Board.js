@@ -155,7 +155,8 @@ class Board
 		this.score += this.linePoints;
 		this.linesCleared++;
 		this.updateScore();
-		for(let i = row;i>0;i--)
+		let end =  (row > Math.floor(ROWS/2)) ?  Math.floor(ROWS/2)+1:0;
+		for(let i = row;i>end;i--)
 		{
 			let replace,by;
 			for(let j = 0; j< COLS;j++)

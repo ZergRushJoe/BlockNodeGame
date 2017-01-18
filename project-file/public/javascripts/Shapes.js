@@ -60,7 +60,7 @@ class Shape
 				(this.activeBoard.getNode(temp)&&
 					!(this.activeBoard.getNode(temp).style.backgroundColor == "black")))
 			{
-				if(this.indexs[0] < COLS||this.indexs[0]> Math.floor(ROWS*COLS)+COLS)
+				if(this.indexs[0] ==Math.floor( COLS/2)||this.indexs[0]== Math.floor(ROWS*COLS/2)+Math.floor( COLS/2))
 				{
 					this.activeBoard.gameover = true;
 				}
