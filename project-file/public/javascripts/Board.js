@@ -18,7 +18,7 @@ class Board
 		this.activeShape = new Shape(0,this);
 		this.activeShape.pickConfig();
 
-
+		this.stopRow = ROWS*COLS;
 		this.score = 0;
 		this.linePoints = 100;
 		this.linesCleared = 0;
@@ -29,8 +29,8 @@ class Board
 			temp = this.blocks.item(i);
 			temp.style.width = WIDTH + "px";
 			temp.style.height = HEIGHT + "px";
-			temp.style.top  = (Math.floor(i/COLS) * HEIGHT) + "px";
-			temp.style.left = (i%COLS * WIDTH) + "px";
+			temp.style.top  = getHeight(i) + "px";
+			temp.style.left = getLength(i) + "px";
 		}
 
 	}
@@ -56,7 +56,7 @@ class Board
 		if(this.updates == this.speed)
 		{
 			this.updates = 0;
-            if(!(this.activeShape.moveDown()))
+            if(!(this.activeShape.moveDown(this.stopRow)))
             {
             	if(this.primed)
 				{
@@ -67,6 +67,7 @@ class Board
 					}
 					this.primed = false;
                     this.clearLine();
+                    this.stopRow = (this.stopRow == ROWS*COLS) ? Math.floor(ROWS*COLS)/2 :ROWS*COLS ;
 					this.activeShape.pickConfig();
 				}else
 				{
@@ -154,7 +155,8 @@ class Board
 		this.score += this.linePoints;
 		this.linesCleared++;
 		this.updateScore();
-		for(let i = row;i>0;i--)
+		let end =  (row > Math.floor(ROWS/2)) ?  Math.floor(ROWS/2)+1:0;
+		for(let i = row;i>end;i--)
 		{
 			let replace,by;
 			for(let j = 0; j< COLS;j++)
@@ -169,6 +171,17 @@ class Board
 
 }
 
+//utilities for game board
 
+function getHeight(index)
+{
+	if(index < (Math.floor(ROWS/2))*COLS)
+		return Math.floor(index/COLS)*HEIGHT;
+	return ROWS*HEIGHT -(Math.floor(index/COLS)-(Math.floor(ROWS/2)-1))*HEIGHT;
+}
+function getLength(index)
+{
+	return (index%COLS)*WIDTH ;
+}
 
 

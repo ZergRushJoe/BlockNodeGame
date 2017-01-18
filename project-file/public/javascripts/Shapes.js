@@ -18,7 +18,7 @@ class Shape
 		this.speed = 200;
 		this.primed = true;
 		this.change = true;
-
+		this.start =1;
 	}
 	update(time)
 	{
@@ -46,7 +46,7 @@ class Shape
 		}
 	}
 
-	moveDown()
+	moveDown(stopRow)
 	{
 		let newArray = [];
 		let temp;
@@ -56,17 +56,18 @@ class Shape
 		for(let i=0;i<this.indexs.length;i++)
 		{
 			temp = this.downIndex(this.indexs[i]);
-			if(temp > (ROWS*COLS)-1 ||
-				!(this.activeBoard.getNode(temp).style.backgroundColor == "black"))
+			if((temp > stopRow-1 && temp< stopRow+COLS )||
+				(this.activeBoard.getNode(temp)&&
+					!(this.activeBoard.getNode(temp).style.backgroundColor == "black")))
 			{
-				if(this.indexs[0] < 10)
+				if(this.indexs[0] ==Math.floor( COLS/2)||this.indexs[0]== Math.floor(ROWS*COLS/2)+Math.floor( COLS/2))
 				{
 					this.activeBoard.gameover = true;
 				}
                 this.show();
 				return false;
 			}
-			newArray[i] = temp;
+			newArray[i] = temp%(ROWS*COLS);
 		}
 
 		this.indexs = newArray;
@@ -221,8 +222,9 @@ class Shape
 	pickConfig()
 	{
         var picked = Math.floor(Math.random() * 7);
+        this.start = (this.start == 0) ? (Math.floor(ROWS*COLS)/2):0;
 		this.indexs = [];
-		let center = Math.floor(COLS/2);
+		let center = Math.floor(COLS/2) + this.start;
         switch(picked)
 		{
 			case 0:
@@ -283,6 +285,7 @@ class Shape
                 this.indexs[4] = center+COLS*2+1;
 				break;
 		}
+
 		this.show();
     }
 }

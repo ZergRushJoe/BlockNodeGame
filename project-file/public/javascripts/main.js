@@ -17,10 +17,10 @@ for(let i = 0; i <ROWS*COLS;i++)
 }
 
 var gameBoard = new Board();
-let swappers = [];
-swappers[0] = new Swapper(gameBoard,ROWS*COLS-COLS*4,ROWS*COLS -COLS ,10000);
-swappers[1] = new Swapper(gameBoard,ROWS*COLS-COLS*5,ROWS*COLS -COLS*2 ,15000);
-let swappingHap= false;
+// let swappers = [];
+// swappers[0] = new Swapper(gameBoard,ROWS*COLS-COLS*4,ROWS*COLS -COLS ,10000);
+// swappers[1] = new Swapper(gameBoard,ROWS*COLS-COLS*5,ROWS*COLS -COLS*2 ,15000);
+// let swappingHap= false;
 
 let lastTime = 0;
 gameBoard.reset();
@@ -35,20 +35,20 @@ function renderer(time)
     }
     requestAnimationFrame(renderer);
     lastTime = time;
-    swappingHap = false;
-    for(let i = 0; i< swappers.length;i++)
-    {
-        swappers[i].update(time);
-        if(swappers[i].swapping)
-        {
-            swappingHap = true;
-        }
-    }
-
-    if(!swappingHap)
-    {
+    // swappingHap = false;
+    // for(let i = 0; i< swappers.length;i++)
+    // {
+    //     swappers[i].update(time);
+    //     if(swappers[i].swapping)
+    //     {
+    //         swappingHap = true;
+    //     }
+    // }
+	//
+    // if(!swappingHap)
+    // {
 		gameBoard.update();
-    }
+    // }
 
 
 
@@ -64,11 +64,11 @@ document.addEventListener("keydown",keydown);
 
 function keydown(e)
 {
-    console.log(e);
-    if(swappingHap)
-    {
-        return;
-    }
+
+    // if(swappingHap)
+    // {
+    //     return;
+    // }
     let key = e.key.toLowerCase();
     if(key == "w" || key == "arrowup")
     {
@@ -84,6 +84,6 @@ function keydown(e)
     }
     if(e.key.toLowerCase() == "s"||key == "arrowdown")
     {
-        gameBoard.activeShape.moveDown();
+        gameBoard.activeShape.moveDown(gameBoard.stopRow);
     }
 }
