@@ -221,7 +221,7 @@ class Shape
 	}
 	pickConfig()
 	{
-        var picked = Math.floor(Math.random() * 7);
+        var picked = Math.floor(Math.random() * 11);
         this.start = (this.start == 0) ? (Math.floor(ROWS*COLS)/2):0;
 		this.indexs = [];
 		let center = Math.floor(COLS/2) + this.start;
@@ -277,13 +277,45 @@ class Shape
                 this.indexs[4] = center+COLS;
 				break;
 			case 6:
-				this.color = "#0099ff";
+				this.color = "#ecff00";
                 this.indexs[0] = center;
                 this.indexs[1] = center+1;
                 this.indexs[2] = center+COLS;
                 this.indexs[3] = center+COLS*2;
                 this.indexs[4] = center+COLS*2+1;
 				break;
+            case 7:
+                this.color = "#ff0074";
+                this.indexs[0] = center;
+                this.indexs[1] = center+COLS+1;
+                this.indexs[2] = center+COLS;
+                this.indexs[3] = center+COLS*2;
+                this.indexs[4] = center+COLS*2+1;
+                break;
+            case 8:
+                this.color = "#00ff76";
+                this.indexs[0] = center;
+                this.indexs[1] = center+COLS+1;
+                this.indexs[2] = center+COLS;
+                this.indexs[3] = center+COLS*2;
+                this.indexs[4] = center+COLS*2+1;
+                break;
+            case 9:
+                this.color = "#0089ff";
+                this.indexs[0] = center;
+                this.indexs[1] = center+1;
+                this.indexs[2] = center+COLS+1;
+                this.indexs[3] = center+COLS*2+1;
+                this.indexs[4] = center+COLS*2+2;
+                break;
+            case 10:
+                this.color = "#9900ff";
+                this.indexs[0] = center-1;
+                this.indexs[1] = center;
+                this.indexs[2] = center+1;
+                this.indexs[3] = center+COLS+1;
+                this.indexs[4] = center+COLS+2;
+                break;
 		}
 
 		this.show();
