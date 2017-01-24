@@ -1,10 +1,10 @@
 /**
  * Created by jkarp on 12/22/2016.
  */
-const ROWS = 30;
-const COLS = 12;
-const HEIGHT = 25;
-const WIDTH = 25;
+const ROWS = 36;
+const COLS = 14;
+const HEIGHT = 20;
+const WIDTH = 20;
 
 class Shape
 {
@@ -221,7 +221,7 @@ class Shape
 	}
 	pickConfig()
 	{
-        var picked = Math.floor(Math.random() * 7);
+        var picked = Math.floor(Math.random() * 11);
         this.start = (this.start == 0) ? (Math.floor(ROWS*COLS)/2):0;
 		this.indexs = [];
 		let center = Math.floor(COLS/2) + this.start;
@@ -230,13 +230,18 @@ class Shape
 			case 0:
 				this.color = "#ff0000";
 				this.indexs[0] = center;
-				this.indexs[1] = center+1;
+				this.indexs[1] = center+COLS;
+				this.indexs[2] = center+COLS*2;
+				this.indexs[3] = center+COLS*2+1;
+				this.indexs[4] = center+COLS*2+2;
 				break;
 			case 1:
-				   this.color = "#00ff00";
-				   this.indexs[0] = center;
-				   this.indexs[1] = center+COLS;
-				   this.indexs[2] = center+COLS+1;
+				this.color = "#00ff00";
+				this.indexs[0] = center;
+				this.indexs[1] = center+COLS;
+				this.indexs[2] = center+COLS*2;
+				this.indexs[3] = center+COLS*2-1;
+				this.indexs[4] = center+COLS*2+1;
 				break;
 			case 2:
                 this.color = "#0000ff";
@@ -248,25 +253,20 @@ class Shape
 				break;
 			case 3:
                 this.color = "#ff00ff";
-				this.indexs[0] = center;
-				this.indexs[1] = center+COLS;
-				this.indexs[2] = center+COLS*2;
+                this.indexs[0] = center;
+                this.indexs[1] = center+COLS-2;
+                this.indexs[2] = center+COLS-1;
+                this.indexs[3] = center+COLS;
+                this.indexs[4] = center+COLS+1;
 
 				break;
 			case 4:
-
+                this.color = "#ffb700";
                 this.indexs[0] = center;
                 this.indexs[1] = center+COLS;
-                if(Math.floor(Math.random()*2) == 1)
-				{
-					this.color = "#ffff00";
-					this.indexs[2] = center+COLS*2+1;
-				}
-				else
-				{
-					this.color = "#ff9900";
-					this.indexs[2] = center+COLS*2-1;
-				}
+              	this.indexs[2] = center+COLS*2;
+                this.indexs[3] = center+COLS*3;
+                this.indexs[4] = center+COLS*4;
 				break;
 			case 5:
                 this.color = "#9900ff";
@@ -277,13 +277,45 @@ class Shape
                 this.indexs[4] = center+COLS;
 				break;
 			case 6:
-				this.color = "#0099ff";
+				this.color = "#ecff00";
                 this.indexs[0] = center;
                 this.indexs[1] = center+1;
                 this.indexs[2] = center+COLS;
                 this.indexs[3] = center+COLS*2;
                 this.indexs[4] = center+COLS*2+1;
 				break;
+            case 7:
+                this.color = "#ff0074";
+                this.indexs[0] = center;
+                this.indexs[1] = center+COLS+1;
+                this.indexs[2] = center+COLS;
+                this.indexs[3] = center+COLS*2;
+                this.indexs[4] = center+COLS*2+1;
+                break;
+            case 8:
+                this.color = "#00ff76";
+                this.indexs[0] = center;
+                this.indexs[1] = center+COLS+1;
+                this.indexs[2] = center+COLS;
+                this.indexs[3] = center+COLS*2;
+                this.indexs[4] = center+COLS*2+1;
+                break;
+            case 9:
+                this.color = "#0089ff";
+                this.indexs[0] = center;
+                this.indexs[1] = center+1;
+                this.indexs[2] = center+COLS+1;
+                this.indexs[3] = center+COLS*2+1;
+                this.indexs[4] = center+COLS*2+2;
+                break;
+            case 10:
+                this.color = "#9900ff";
+                this.indexs[0] = center-1;
+                this.indexs[1] = center;
+                this.indexs[2] = center+1;
+                this.indexs[3] = center+COLS+1;
+                this.indexs[4] = center+COLS+2;
+                break;
 		}
 
 		this.show();
