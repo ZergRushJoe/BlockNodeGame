@@ -1,10 +1,10 @@
 /**
  * Created by jkarp on 12/22/2016.
  */
-const ROWS = 30;
-const COLS = 12;
-const HEIGHT = 25;
-const WIDTH = 25;
+const ROWS = 36;
+const COLS = 14;
+const HEIGHT = 20;
+const WIDTH = 20;
 
 class Shape
 {
