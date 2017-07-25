@@ -17,7 +17,8 @@
 
 ##Instruction to run
 1. download project
-+ run node server inside project
++ run npm install in the root of the project
++ run node ./bin/www to run server in the root of the folder
 + open web browser and put the localhost + port into the url and hit enter
 
 the game will run automaticly if the node server is running correctly.
