@@ -1,5 +1,2 @@
-<<<<<<< HEAD
-project file/.idea/
-=======
-project file/.idea
->>>>>>> origin/master
+.idea/*
+node_modules/*
