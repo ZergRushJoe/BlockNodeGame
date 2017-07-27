@@ -1,11 +1,13 @@
-body {
+body
+{
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: #00b7ff;
   padding: 0px;
   margin: 0px auto;
 }
 
-a {
+a
+{
   color: #00B7FF;
 }
 #score

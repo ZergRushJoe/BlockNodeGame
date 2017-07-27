@@ -1,0 +1,22 @@
+.block
+{
+  position: absolute;
+  display: block;
+  background: blue;
+  margin:0;
+  top:0;
+  font-size: 8px;
+  /*border-top: 1px solid rgba(255,255,255,.5);*/
+  /*border-left: 1px solid rgba(255,255,255,.5);*/
+  color:white;
+
+}
+.filled
+{
+  background-image: url("/images/blockCover.png");
+  background-size: cover;
+}
+.line
+{
+    background: #666;
+}

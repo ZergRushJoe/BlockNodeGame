@@ -1,0 +1,23 @@
+body
+{
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #00b7ff;
+  padding: 0px;
+  margin: 0px auto;
+}
+
+a
+{
+  color: #00B7FF;
+}
+#score
+{
+  float :left;
+  display:inline-block;
+  background: black;
+  color:white;
+  font-size:28px;
+  height:30px;
+  width:100px;
+  text-align: right;
+}
